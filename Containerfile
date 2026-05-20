@@ -34,6 +34,6 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
         xed && \
     dnf copr -y disable microwave/SCARECROW && \
     systemctl set-default graphical && \
-    systemctl enable gdm
+    systemctl enable scdm
     
 RUN bootc container lint
