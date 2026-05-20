@@ -28,8 +28,9 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
         vater \
         xdg-desktop-portal-scarecrow \
         gnome-terminal
-        # temporary nemo 
-        # temporary xed && \
+        # temporary \
+        nemo \
+        xed && \
     dnf copr disable microwave/SCARECROW
     
 RUN bootc container lint
