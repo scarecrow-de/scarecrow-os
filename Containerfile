@@ -27,7 +27,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
         scdm \
         vater \
         xdg-desktop-portal-scarecrow \
-        gnome-terminal
+        gnome-terminal \
         # temporary \
         nemo \
         xed && \
