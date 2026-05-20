@@ -33,6 +33,17 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
         nemo \
         xed && \
     dnf copr -y disable microwave/SCARECROW && \
+    dnf install -y --setopt=install_weak_deps=False \
+        xorg-x11-drv-amdgpu \
+        xorg-x11-drv-armada \
+        xorg-x11-drv-ati \
+        xorg-x11-drv-dummy \
+        xorg-x11-drv-evdev \
+        xorg-x11-drv-libinput \
+        xorg-x11-drv-nouveau \
+        xorg-x11-drv-qxl \
+        xorg-x11-drv-wacom \
+        xorg-x11-drv-wacom-serial-support && \
     systemctl set-default graphical && \
     systemctl enable scdm
     
