@@ -10,6 +10,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
+    dnf install -y dnf5-plugins && \
     dnf copr enable microwave/SCARECROW && \
     dnf update -y && \
     dnf install -y --setopt=install_weak_deps=False \
