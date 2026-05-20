@@ -11,7 +11,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
     dnf install -y dnf5-plugins && \
-    dnf copr enable microwave/SCARECROW && \
+    dnf copr enable -y microwave/SCARECROW && \
     dnf update -y && \
     dnf install -y --setopt=install_weak_deps=False \
         scarecrow-adwaita-icon-theme \
@@ -32,6 +32,8 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
         # temporary \
         nemo \
         xed && \
-    dnf copr disable microwave/SCARECROW
+    dnf copr -y disable microwave/SCARECROW && \
+    systemctl set-default graphical && \
+    systemctl enable gdm
     
 RUN bootc container lint
