@@ -112,8 +112,13 @@ jobs:
           if-no-files-found: error
           path: |
             /tmp/outputs/digests/*.txt
-
-   container:
+  manifest:
+    name: Create Manifest
+    runs-on: ubuntu-latest
+    if: always()
+    needs:
+      - build_push
+    container:
       image: docker.io/library/alpine:latest
       options: --privileged --security-opt seccomp=unconfined
     permissions:
