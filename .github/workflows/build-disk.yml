@@ -2,13 +2,6 @@
 name: Build disk images
 
 on:
-  workflow_dispatch:
-    inputs:
-      upload-to-s3:
-        description: "Upload to S3"
-        required: false
-        default: false
-        type: boolean
   pull_request:
     branches:
       - main
@@ -16,6 +9,7 @@ on:
       - './disk_config/disk.toml'
       - './disk_config/iso.toml'
       - './.github/workflows/build-disk.yml'
+    workflow_dispatch:
 
 env:
   IMAGE_NAME: ${{ github.event.repository.name }} # output of build.yml, keep in sync
