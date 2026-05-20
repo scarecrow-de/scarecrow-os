@@ -43,7 +43,8 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
         xorg-x11-drv-nouveau \
         xorg-x11-drv-qxl \
         xorg-x11-drv-wacom \
-        xorg-x11-drv-wacom-serial-support && \
+        xorg-x11-drv-wacom-serial-support \
+        open-vm-tools open-vm-tools-desktop && \
     systemctl set-default graphical && \
     systemctl enable scdm
     
